@@ -17,7 +17,7 @@ public class gameController : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
-        
+
     }
 
     // Update is called once per frame
@@ -29,10 +29,6 @@ public class gameController : MonoBehaviour
             SpwanEnemy();
             isEnemyActive = true;
         }
-        reset = Character.GetComponent<Ball>().isShoot;
-        if(reset){
-            StartCoroutine(waitS());
-        }
     }
 
     void SpwanEnemy(){
@@ -41,8 +37,4 @@ public class gameController : MonoBehaviour
         Instantiate(enemyActive, posEnemy.transform.position, posEnemy.transform.rotation);
     }
 
-    IEnumerator waitS(){
-        yield return new WaitForSeconds(3);
-        Instantiate(Character, Hook.transform.position, transform.rotation);
-    }
 }
