@@ -60,7 +60,7 @@ public class Ball : MonoBehaviour
 	{
 		isPressed = false;
 		GetComponent<SpringJoint2D>().enabled = false;
-		gameObject.GetComponent<Rigidbody2D>().velocity = (Direction) * (hook.position - (Vector2)transform.position) * Force;
+		gameObject.GetComponent<Rigidbody2D>().velocity = (Direction) * (hook.position - (Vector2)transform.position).magnitude * Force;
 		// rb.isKinematic = false;
 		StartCoroutine(Release());
 	}
@@ -83,7 +83,7 @@ public class Ball : MonoBehaviour
 	}
 
 	Vector2 PointPosition(float t){
-		Vector2 currentPointPos = (Vector2)transform.position + ((Direction).normalized * Force * t	)* (hook.position - (Vector2)transform.position) + 0.5f*Physics2D.gravity *(t*t);
+		Vector2 currentPointPos = (Vector2)transform.position + ((Direction).normalized * Force * t	)* (hook.position - (Vector2)transform.position).magnitude + 0.5f*Physics2D.gravity *(t*t);
 		return currentPointPos;
 	}
 }
