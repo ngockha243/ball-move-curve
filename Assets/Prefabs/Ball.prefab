@@ -161,4 +161,8 @@ MonoBehaviour:
   hook: {fileID: 0}
   releaseTime: 0.15
   maxDragDistance: 2
+  Force: 15
   nextBall: {fileID: 0}
+  PointPrefab: {fileID: 0}
+  Points: []
+  numberOfPoints: 0

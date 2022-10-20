@@ -135,7 +135,7 @@ GameObject:
   - component: {fileID: 57481263}
   - component: {fileID: 57481262}
   m_Layer: 0
-  m_Name: Square
+  m_Name: obstacle3
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -226,13 +226,13 @@ Transform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 57481261}
-  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 2.17, y: -0.89, z: 0}
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalPosition: {x: 2.6786156, y: -0.8097958, z: -0.062247574}
   m_LocalScale: {x: 1, y: 2.4628665, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
-  m_Father: {fileID: 0}
-  m_RootOrder: 11
+  m_Father: {fileID: 161675881}
+  m_RootOrder: 2
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &102814409
 GameObject:
@@ -328,6 +328,40 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 4
   m_LocalEulerAnglesHint: {x: 50, y: -30, z: 0}
+--- !u!1 &161675880
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 161675881}
+  m_Layer: 0
+  m_Name: obstacle
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &161675881
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 161675880}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: -0.50861543, y: -0.08020419, z: 0.062247574}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children:
+  - {fileID: 2064860934}
+  - {fileID: 1608500157}
+  - {fileID: 57481264}
+  m_Father: {fileID: 0}
+  m_RootOrder: 11
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &519420028
 GameObject:
   m_ObjectHideFlags: 0
@@ -364,7 +398,7 @@ Camera:
   m_Enabled: 1
   serializedVersion: 2
   m_ClearFlags: 2
-  m_BackGroundColor: {r: 0.19215687, g: 0.3019608, b: 0.4745098, a: 0}
+  m_BackGroundColor: {r: 0.797686, g: 0.84334475, b: 0.9150943, a: 0}
   m_projectionMatrixMode: 1
   m_GateFitMode: 2
   m_FOVAxisMode: 0
@@ -424,7 +458,7 @@ GameObject:
   - component: {fileID: 737934348}
   - component: {fileID: 737934347}
   m_Layer: 5
-  m_Name: Text (TMP)
+  m_Name: Score
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -761,7 +795,7 @@ SpriteRenderer:
   m_LightmapParameters: {fileID: 0}
   m_SortingLayerID: 0
   m_SortingLayer: 0
-  m_SortingOrder: 0
+  m_SortingOrder: 1
   m_Sprite: {fileID: 7482667652216324306, guid: 311925a002f4447b3a28927169b83ea6, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
@@ -781,8 +815,8 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1150191662}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0.959, y: -2.468, z: 0}
-  m_LocalScale: {x: 18.2181, y: 0.8759, z: 1}
+  m_LocalPosition: {x: -0.0732, y: -2.468, z: 0}
+  m_LocalScale: {x: 22.505976, y: 0.8759, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 0}
@@ -883,9 +917,21 @@ PrefabInstance:
       value: 
       objectReference: {fileID: 808794708}
     - target: {fileID: 4684345125994869198, guid: 8a91bad25c4b2e04ca67b6d8b721d60b, type: 3}
+      propertyPath: Force
+      value: 10
+      objectReference: {fileID: 0}
+    - target: {fileID: 4684345125994869198, guid: 8a91bad25c4b2e04ca67b6d8b721d60b, type: 3}
       propertyPath: nextBall
       value: 
       objectReference: {fileID: 1287001779}
+    - target: {fileID: 4684345125994869198, guid: 8a91bad25c4b2e04ca67b6d8b721d60b, type: 3}
+      propertyPath: PointPrefab
+      value: 
+      objectReference: {fileID: 7502982843299983741, guid: b7bc7cd77c85c484597386a62677f6ba, type: 3}
+    - target: {fileID: 4684345125994869198, guid: 8a91bad25c4b2e04ca67b6d8b721d60b, type: 3}
+      propertyPath: numberOfPoints
+      value: 20
+      objectReference: {fileID: 0}
     - target: {fileID: 4684345125994869199, guid: 8a91bad25c4b2e04ca67b6d8b721d60b, type: 3}
       propertyPath: m_Name
       value: Ball (1)
@@ -980,7 +1026,7 @@ GameObject:
   - component: {fileID: 1608500156}
   - component: {fileID: 1608500155}
   m_Layer: 0
-  m_Name: Square (2)
+  m_Name: obstacle2
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -1071,13 +1117,13 @@ Transform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1608500154}
-  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 6.43, y: -1, z: 0}
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalPosition: {x: 6.9386153, y: -0.9197958, z: -0.062247574}
   m_LocalScale: {x: 1, y: 2.4628665, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
-  m_Father: {fileID: 0}
-  m_RootOrder: 13
+  m_Father: {fileID: 161675881}
+  m_RootOrder: 1
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1001 &1674861157
 PrefabInstance:
@@ -1143,8 +1189,20 @@ PrefabInstance:
       value: 
       objectReference: {fileID: 808794708}
     - target: {fileID: 4684345125994869198, guid: 8a91bad25c4b2e04ca67b6d8b721d60b, type: 3}
+      propertyPath: Force
+      value: 10
+      objectReference: {fileID: 0}
+    - target: {fileID: 4684345125994869198, guid: 8a91bad25c4b2e04ca67b6d8b721d60b, type: 3}
       propertyPath: nextBall
       value: 
+      objectReference: {fileID: 0}
+    - target: {fileID: 4684345125994869198, guid: 8a91bad25c4b2e04ca67b6d8b721d60b, type: 3}
+      propertyPath: PointPrefab
+      value: 
+      objectReference: {fileID: 7502982843299983741, guid: b7bc7cd77c85c484597386a62677f6ba, type: 3}
+    - target: {fileID: 4684345125994869198, guid: 8a91bad25c4b2e04ca67b6d8b721d60b, type: 3}
+      propertyPath: numberOfPoints
+      value: 20
       objectReference: {fileID: 0}
     - target: {fileID: 4684345125994869199, guid: 8a91bad25c4b2e04ca67b6d8b721d60b, type: 3}
       propertyPath: m_Name
@@ -1269,7 +1327,7 @@ GameObject:
   - component: {fileID: 2064860933}
   - component: {fileID: 2064860932}
   m_Layer: 0
-  m_Name: Square (1)
+  m_Name: obstacle1
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -1360,13 +1418,13 @@ Transform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 2064860931}
-  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 6.95, y: 0.55, z: 0}
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalPosition: {x: 7.4586153, y: 0.63020414, z: -0.062247574}
   m_LocalScale: {x: 3.1851199, y: 0.69911814, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
-  m_Father: {fileID: 0}
-  m_RootOrder: 12
+  m_Father: {fileID: 161675881}
+  m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &2089321694
 GameObject:
@@ -1459,9 +1517,21 @@ PrefabInstance:
       value: 
       objectReference: {fileID: 808794708}
     - target: {fileID: 4684345125994869198, guid: 8a91bad25c4b2e04ca67b6d8b721d60b, type: 3}
+      propertyPath: Force
+      value: 10
+      objectReference: {fileID: 0}
+    - target: {fileID: 4684345125994869198, guid: 8a91bad25c4b2e04ca67b6d8b721d60b, type: 3}
       propertyPath: nextBall
       value: 
       objectReference: {fileID: 1549639783}
+    - target: {fileID: 4684345125994869198, guid: 8a91bad25c4b2e04ca67b6d8b721d60b, type: 3}
+      propertyPath: PointPrefab
+      value: 
+      objectReference: {fileID: 7502982843299983741, guid: b7bc7cd77c85c484597386a62677f6ba, type: 3}
+    - target: {fileID: 4684345125994869198, guid: 8a91bad25c4b2e04ca67b6d8b721d60b, type: 3}
+      propertyPath: numberOfPoints
+      value: 20
+      objectReference: {fileID: 0}
     - target: {fileID: 4684345125994869199, guid: 8a91bad25c4b2e04ca67b6d8b721d60b, type: 3}
       propertyPath: m_Name
       value: Ball
