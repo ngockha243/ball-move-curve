@@ -5,20 +5,12 @@ using TMPro;
 
 public class gameController : MonoBehaviour
 {
-    public int score = 0;
+    public static int score = 0;
     public TextMeshProUGUI tmp;
     public GameObject[] gameObj;
     public GameObject enemyActive;
-    public bool isEnemyActive = false;
+    public static bool isEnemyActive = false;
     public GameObject posEnemy;
-    public GameObject Character;
-    public GameObject Hook;
-    public bool reset;
-    // Start is called before the first frame update
-    void Start()
-    {
-
-    }
 
     // Update is called once per frame
     void Update()

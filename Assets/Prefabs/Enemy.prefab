@@ -147,3 +147,5 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   obj: {fileID: 0}
+  deathEffect: {fileID: 6063491343327142325, guid: 6f7bad691b5ac8b4ea3a608e16138d42, type: 3}
+  ballDeathEffect: {fileID: 6063491343327142325, guid: 75dad6fbcf1fb6d4f83e3acf3ca0af44, type: 3}
