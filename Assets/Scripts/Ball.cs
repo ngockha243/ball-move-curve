@@ -53,16 +53,14 @@ public class Ball : MonoBehaviour
 			for (int i = 0; i < Points.Length; i++){
 				Points[i].transform.position = PointPosition(i * 0.1f);
 			}
-		}
-		// When shoot, Update shoot movement of Ball by formula
-		if(!shoot){
-			// Get direction when shoot
+			// Get position and direction of BALL when drag
 			Vector2 heading = hookPos - (Vector2)transform.position;
 			float distance = heading.magnitude;
 			Direction = heading/distance;
 			rootPos = transform.position;
 		}
-		else{
+		// When shoot, Update shoot movement of Ball by formula
+		if(shoot){
 			timeUpdate += Time.deltaTime;
 			gameObject.transform.position = (Vector2)rootPos + ((Direction).normalized * Force * timeUpdate * (hookPos - (Vector2)rootPos).magnitude + 0.5f*Physics2D.gravity *(timeUpdate * timeUpdate));
 		}
