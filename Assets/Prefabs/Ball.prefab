@@ -96,7 +96,7 @@ Rigidbody2D:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 4684345125994869199}
-  m_BodyType: 0
+  m_BodyType: 1
   m_Simulated: 1
   m_UseFullKinematicContacts: 0
   m_UseAutoMass: 0
@@ -132,7 +132,7 @@ SpringJoint2D:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 4684345125994869199}
-  m_Enabled: 1
+  m_Enabled: 0
   serializedVersion: 4
   m_EnableCollision: 0
   m_ConnectedRigidBody: {fileID: 0}
@@ -158,11 +158,13 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   rb: {fileID: 4684345125994869195}
-  hook: {fileID: 0}
+  hook: {fileID: 1015372251817788842, guid: d525ad74c4ee8a946812b943e2df1c0c, type: 3}
   releaseTime: 0.15
   maxDragDistance: 2
   Force: 15
   nextBall: {fileID: 0}
   PointPrefab: {fileID: 0}
-  Points: []
   numberOfPoints: 0
+  shoot: 0
+  timeUpdate: 0
+  rootPos: {x: 0, y: 0}

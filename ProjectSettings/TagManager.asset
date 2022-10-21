@@ -5,6 +5,7 @@ TagManager:
   serializedVersion: 2
   tags:
   - shoot
+  - hook
   layers:
   - Default
   - TransparentFX
