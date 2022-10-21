@@ -2,6 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.SceneManagement;
+using TMPro;
 
 public class Ball : MonoBehaviour
 {
@@ -24,8 +25,10 @@ public class Ball : MonoBehaviour
 	public int numberOfPoints;
 	private Vector2 Direction;
 	public bool shoot = false;
-	public float timeUpdate;
-	public Vector2 rootPos;
+	private float timeUpdate;
+	private Vector2 rootPos;
+	public Vector2 nextPos;
+	public TextMeshProUGUI willCollide;
 	
 	void Start(){
 		// Create list of prediction location of BALL
@@ -39,6 +42,7 @@ public class Ball : MonoBehaviour
 
 	void Update ()
 	{
+		
 		// Drag Ball -> Update Ball position when Drag, but limit distance drag 
 		if (isPressed)
 		{
@@ -62,9 +66,23 @@ public class Ball : MonoBehaviour
 		// When shoot, Update shoot movement of Ball by formula
 		if(shoot){
 			timeUpdate += Time.deltaTime;
+			
 			gameObject.transform.position = (Vector2)rootPos + ((Direction).normalized * Force * timeUpdate * (hookPos - (Vector2)rootPos).magnitude + 0.5f*Physics2D.gravity *(timeUpdate * timeUpdate));
+
+			float numberOfNextFrame = 1f;
+			// Get position in the next frame of Ball
+			Vector2 nextFrame = (Vector2)rootPos + ((Direction).normalized * Force * (timeUpdate + numberOfNextFrame * Time.deltaTime) * (hookPos - (Vector2)rootPos).magnitude + 0.5f*Physics2D.gravity *((timeUpdate + numberOfNextFrame * Time.deltaTime) * (timeUpdate + numberOfNextFrame * Time.deltaTime)));
+			
+			// Use OverlapCircleAll in the position next frame to detect Collide
+			Collider2D[] hit = Physics2D.OverlapCircleAll(nextFrame, .5f, 1);
+			if (hit.Length > 0)
+			{
+				willCollide.text = "Will Collide: true";
+				Debug.Log("Collide");
+			}
 		}
 
+		
 	}
 
 	void OnMouseDown ()
@@ -74,6 +92,7 @@ public class Ball : MonoBehaviour
 
 		// Remove Drag force when mouse down
 		rb.isKinematic = true;
+		willCollide.text = "Will Collide: false";
 	}
 
 	void OnMouseUp ()

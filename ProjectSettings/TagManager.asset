@@ -6,6 +6,7 @@ TagManager:
   tags:
   - shoot
   - hook
+  - obstacle
   layers:
   - Default
   - TransparentFX

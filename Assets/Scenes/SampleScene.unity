@@ -136,7 +136,7 @@ GameObject:
   - component: {fileID: 57481262}
   m_Layer: 0
   m_Name: obstacle3
-  m_TagString: Untagged
+  m_TagString: obstacle
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 2147483647
@@ -339,7 +339,7 @@ GameObject:
   - component: {fileID: 161675881}
   m_Layer: 0
   m_Name: obstacle
-  m_TagString: Untagged
+  m_TagString: obstacle
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -610,7 +610,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 5fa1b6c6734e7f54b92bd18dd9fa3d86, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  tmp: {fileID: 737934347}
+  scoreText: {fileID: 737934347}
   gameObj:
   - {fileID: 5721265446134258281, guid: 4079236031f90da4f830886b006a7d19, type: 3}
   - {fileID: 2073369149207212765, guid: 3a710c38043598449bcbb0e48f89e024, type: 3}
@@ -631,11 +631,6 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 9
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!50 &808794708 stripped
-Rigidbody2D:
-  m_CorrespondingSourceObject: {fileID: 1015372251817788842, guid: d525ad74c4ee8a946812b943e2df1c0c, type: 3}
-  m_PrefabInstance: {fileID: 1015372251011645438}
-  m_PrefabAsset: {fileID: 0}
 --- !u!1 &1150191662
 GameObject:
   m_ObjectHideFlags: 0
@@ -647,9 +642,10 @@ GameObject:
   - component: {fileID: 1150191665}
   - component: {fileID: 1150191664}
   - component: {fileID: 1150191666}
+  - component: {fileID: 1150191667}
   m_Layer: 0
   m_Name: Ground
-  m_TagString: Untagged
+  m_TagString: obstacle
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -747,6 +743,27 @@ BoxCollider2D:
   serializedVersion: 2
   m_Size: {x: 1, y: 1}
   m_EdgeRadius: 0
+--- !u!50 &1150191667
+Rigidbody2D:
+  serializedVersion: 4
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1150191662}
+  m_BodyType: 2
+  m_Simulated: 1
+  m_UseFullKinematicContacts: 0
+  m_UseAutoMass: 0
+  m_Mass: 1
+  m_LinearDrag: 0
+  m_AngularDrag: 0.05
+  m_GravityScale: 1
+  m_Material: {fileID: 0}
+  m_Interpolate: 0
+  m_SleepingMode: 1
+  m_CollisionDetection: 0
+  m_Constraints: 0
 --- !u!1 &1287001779 stripped
 GameObject:
   m_CorrespondingSourceObject: {fileID: 4684345125994869199, guid: 8a91bad25c4b2e04ca67b6d8b721d60b, type: 3}
@@ -814,11 +831,11 @@ PrefabInstance:
     - target: {fileID: 4684345125994869197, guid: 8a91bad25c4b2e04ca67b6d8b721d60b, type: 3}
       propertyPath: m_ConnectedRigidBody
       value: 
-      objectReference: {fileID: 808794708}
+      objectReference: {fileID: 0}
     - target: {fileID: 4684345125994869198, guid: 8a91bad25c4b2e04ca67b6d8b721d60b, type: 3}
       propertyPath: hook
       value: 
-      objectReference: {fileID: 808794708}
+      objectReference: {fileID: 0}
     - target: {fileID: 4684345125994869198, guid: 8a91bad25c4b2e04ca67b6d8b721d60b, type: 3}
       propertyPath: Force
       value: 10
@@ -832,12 +849,28 @@ PrefabInstance:
       value: 
       objectReference: {fileID: 7502982843299983741, guid: b7bc7cd77c85c484597386a62677f6ba, type: 3}
     - target: {fileID: 4684345125994869198, guid: 8a91bad25c4b2e04ca67b6d8b721d60b, type: 3}
+      propertyPath: predictBall
+      value: 
+      objectReference: {fileID: 0}
+    - target: {fileID: 4684345125994869198, guid: 8a91bad25c4b2e04ca67b6d8b721d60b, type: 3}
+      propertyPath: willCollide
+      value: 
+      objectReference: {fileID: 2055544129}
+    - target: {fileID: 4684345125994869198, guid: 8a91bad25c4b2e04ca67b6d8b721d60b, type: 3}
       propertyPath: numberOfPoints
       value: 20
+      objectReference: {fileID: 0}
+    - target: {fileID: 4684345125994869198, guid: 8a91bad25c4b2e04ca67b6d8b721d60b, type: 3}
+      propertyPath: predictCollideText
+      value: 
       objectReference: {fileID: 0}
     - target: {fileID: 4684345125994869199, guid: 8a91bad25c4b2e04ca67b6d8b721d60b, type: 3}
       propertyPath: m_Name
       value: Ball (1)
+      objectReference: {fileID: 0}
+    - target: {fileID: 4684345125994869199, guid: 8a91bad25c4b2e04ca67b6d8b721d60b, type: 3}
+      propertyPath: m_Layer
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 4684345125994869199, guid: 8a91bad25c4b2e04ca67b6d8b721d60b, type: 3}
       propertyPath: m_IsActive
@@ -930,7 +963,7 @@ GameObject:
   - component: {fileID: 1608500155}
   m_Layer: 0
   m_Name: obstacle2
-  m_TagString: Untagged
+  m_TagString: obstacle
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 2147483647
@@ -1090,11 +1123,11 @@ PrefabInstance:
     - target: {fileID: 4684345125994869197, guid: 8a91bad25c4b2e04ca67b6d8b721d60b, type: 3}
       propertyPath: m_ConnectedRigidBody
       value: 
-      objectReference: {fileID: 808794708}
+      objectReference: {fileID: 0}
     - target: {fileID: 4684345125994869198, guid: 8a91bad25c4b2e04ca67b6d8b721d60b, type: 3}
       propertyPath: hook
       value: 
-      objectReference: {fileID: 808794708}
+      objectReference: {fileID: 0}
     - target: {fileID: 4684345125994869198, guid: 8a91bad25c4b2e04ca67b6d8b721d60b, type: 3}
       propertyPath: Force
       value: 10
@@ -1108,12 +1141,28 @@ PrefabInstance:
       value: 
       objectReference: {fileID: 7502982843299983741, guid: b7bc7cd77c85c484597386a62677f6ba, type: 3}
     - target: {fileID: 4684345125994869198, guid: 8a91bad25c4b2e04ca67b6d8b721d60b, type: 3}
+      propertyPath: predictBall
+      value: 
+      objectReference: {fileID: 0}
+    - target: {fileID: 4684345125994869198, guid: 8a91bad25c4b2e04ca67b6d8b721d60b, type: 3}
+      propertyPath: willCollide
+      value: 
+      objectReference: {fileID: 2055544129}
+    - target: {fileID: 4684345125994869198, guid: 8a91bad25c4b2e04ca67b6d8b721d60b, type: 3}
       propertyPath: numberOfPoints
       value: 20
+      objectReference: {fileID: 0}
+    - target: {fileID: 4684345125994869198, guid: 8a91bad25c4b2e04ca67b6d8b721d60b, type: 3}
+      propertyPath: predictCollideText
+      value: 
       objectReference: {fileID: 0}
     - target: {fileID: 4684345125994869199, guid: 8a91bad25c4b2e04ca67b6d8b721d60b, type: 3}
       propertyPath: m_Name
       value: Ball (2)
+      objectReference: {fileID: 0}
+    - target: {fileID: 4684345125994869199, guid: 8a91bad25c4b2e04ca67b6d8b721d60b, type: 3}
+      propertyPath: m_Layer
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 4684345125994869199, guid: 8a91bad25c4b2e04ca67b6d8b721d60b, type: 3}
       propertyPath: m_IsActive
@@ -1153,6 +1202,7 @@ RectTransform:
   m_ConstrainProportionsScale: 0
   m_Children:
   - {fileID: 737934349}
+  - {fileID: 2055544128}
   m_Father: {fileID: 0}
   m_RootOrder: 7
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
@@ -1222,6 +1272,141 @@ Canvas:
   m_SortingLayerID: 0
   m_SortingOrder: 0
   m_TargetDisplay: 0
+--- !u!1 &2055544127
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 2055544128}
+  - component: {fileID: 2055544130}
+  - component: {fileID: 2055544129}
+  m_Layer: 5
+  m_Name: PredictCollide
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!224 &2055544128
+RectTransform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2055544127}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 1862032490}
+  m_RootOrder: 1
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+  m_AnchorMin: {x: 0.5, y: 1}
+  m_AnchorMax: {x: 0.5, y: 1}
+  m_AnchoredPosition: {x: 44.39, y: -37.1}
+  m_SizeDelta: {x: 417.9, y: 50}
+  m_Pivot: {x: 0.5, y: 0.5}
+--- !u!114 &2055544129
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2055544127}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: f4688fdb7df04437aeb418b961361dc5, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_Material: {fileID: 0}
+  m_Color: {r: 1, g: 1, b: 1, a: 1}
+  m_RaycastTarget: 1
+  m_RaycastPadding: {x: 0, y: 0, z: 0, w: 0}
+  m_Maskable: 1
+  m_OnCullStateChanged:
+    m_PersistentCalls:
+      m_Calls: []
+  m_text: 'Predict Collide:'
+  m_isRightToLeft: 0
+  m_fontAsset: {fileID: 11400000, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
+  m_sharedMaterial: {fileID: 2180264, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
+  m_fontSharedMaterials: []
+  m_fontMaterial: {fileID: 0}
+  m_fontMaterials: []
+  m_fontColor32:
+    serializedVersion: 2
+    rgba: 4294967295
+  m_fontColor: {r: 1, g: 1, b: 1, a: 1}
+  m_enableVertexGradient: 0
+  m_colorMode: 3
+  m_fontColorGradient:
+    topLeft: {r: 1, g: 1, b: 1, a: 1}
+    topRight: {r: 1, g: 1, b: 1, a: 1}
+    bottomLeft: {r: 1, g: 1, b: 1, a: 1}
+    bottomRight: {r: 1, g: 1, b: 1, a: 1}
+  m_fontColorGradientPreset: {fileID: 0}
+  m_spriteAsset: {fileID: 0}
+  m_tintAllSprites: 0
+  m_StyleSheet: {fileID: 0}
+  m_TextStyleHashCode: -1183493901
+  m_overrideHtmlColors: 0
+  m_faceColor:
+    serializedVersion: 2
+    rgba: 4294967295
+  m_fontSize: 36
+  m_fontSizeBase: 36
+  m_fontWeight: 400
+  m_enableAutoSizing: 0
+  m_fontSizeMin: 18
+  m_fontSizeMax: 72
+  m_fontStyle: 0
+  m_HorizontalAlignment: 1
+  m_VerticalAlignment: 256
+  m_textAlignment: 65535
+  m_characterSpacing: 0
+  m_wordSpacing: 0
+  m_lineSpacing: 0
+  m_lineSpacingMax: 0
+  m_paragraphSpacing: 0
+  m_charWidthMaxAdj: 0
+  m_enableWordWrapping: 1
+  m_wordWrappingRatios: 0.4
+  m_overflowMode: 0
+  m_linkedTextComponent: {fileID: 0}
+  parentLinkedComponent: {fileID: 0}
+  m_enableKerning: 1
+  m_enableExtraPadding: 0
+  checkPaddingRequired: 0
+  m_isRichText: 1
+  m_parseCtrlCharacters: 1
+  m_isOrthographic: 1
+  m_isCullingEnabled: 0
+  m_horizontalMapping: 0
+  m_verticalMapping: 0
+  m_uvLineOffset: 0
+  m_geometrySortingOrder: 0
+  m_IsTextObjectScaleStatic: 0
+  m_VertexBufferAutoSizeReduction: 0
+  m_useMaxVisibleDescender: 1
+  m_pageToDisplay: 1
+  m_margin: {x: 0, y: 0, z: 0, w: 0}
+  m_isUsingLegacyAnimationComponent: 0
+  m_isVolumetricText: 0
+  m_hasFontAssetChanged: 0
+  m_baseMaterial: {fileID: 0}
+  m_maskOffset: {x: 0, y: 0, z: 0, w: 0}
+--- !u!222 &2055544130
+CanvasRenderer:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2055544127}
+  m_CullTransparentMesh: 1
 --- !u!1 &2064860931
 GameObject:
   m_ObjectHideFlags: 0
@@ -1235,7 +1420,7 @@ GameObject:
   - component: {fileID: 2064860932}
   m_Layer: 0
   m_Name: obstacle1
-  m_TagString: Untagged
+  m_TagString: obstacle
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 2147483647
@@ -1419,7 +1604,16 @@ PrefabInstance:
       propertyPath: m_Name
       value: Hook
       objectReference: {fileID: 0}
-    m_RemovedComponents: []
+    - target: {fileID: 1015372251817788845, guid: d525ad74c4ee8a946812b943e2df1c0c, type: 3}
+      propertyPath: m_Layer
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 1015372251817788845, guid: d525ad74c4ee8a946812b943e2df1c0c, type: 3}
+      propertyPath: m_IsActive
+      value: 1
+      objectReference: {fileID: 0}
+    m_RemovedComponents:
+    - {fileID: 1015372251817788842, guid: d525ad74c4ee8a946812b943e2df1c0c, type: 3}
   m_SourcePrefab: {fileID: 100100000, guid: d525ad74c4ee8a946812b943e2df1c0c, type: 3}
 --- !u!1001 &4684345126457619135
 PrefabInstance:
@@ -1487,7 +1681,7 @@ PrefabInstance:
     - target: {fileID: 4684345125994869197, guid: 8a91bad25c4b2e04ca67b6d8b721d60b, type: 3}
       propertyPath: m_ConnectedRigidBody
       value: 
-      objectReference: {fileID: 808794708}
+      objectReference: {fileID: 0}
     - target: {fileID: 4684345125994869197, guid: 8a91bad25c4b2e04ca67b6d8b721d60b, type: 3}
       propertyPath: m_AutoConfigureConnectedAnchor
       value: 0
@@ -1495,7 +1689,7 @@ PrefabInstance:
     - target: {fileID: 4684345125994869198, guid: 8a91bad25c4b2e04ca67b6d8b721d60b, type: 3}
       propertyPath: hook
       value: 
-      objectReference: {fileID: 808794708}
+      objectReference: {fileID: 0}
     - target: {fileID: 4684345125994869198, guid: 8a91bad25c4b2e04ca67b6d8b721d60b, type: 3}
       propertyPath: Force
       value: 10
@@ -1509,12 +1703,28 @@ PrefabInstance:
       value: 
       objectReference: {fileID: 7502982843299983741, guid: b7bc7cd77c85c484597386a62677f6ba, type: 3}
     - target: {fileID: 4684345125994869198, guid: 8a91bad25c4b2e04ca67b6d8b721d60b, type: 3}
+      propertyPath: predictBall
+      value: 
+      objectReference: {fileID: 0}
+    - target: {fileID: 4684345125994869198, guid: 8a91bad25c4b2e04ca67b6d8b721d60b, type: 3}
+      propertyPath: willCollide
+      value: 
+      objectReference: {fileID: 2055544129}
+    - target: {fileID: 4684345125994869198, guid: 8a91bad25c4b2e04ca67b6d8b721d60b, type: 3}
       propertyPath: numberOfPoints
       value: 20
       objectReference: {fileID: 0}
+    - target: {fileID: 4684345125994869198, guid: 8a91bad25c4b2e04ca67b6d8b721d60b, type: 3}
+      propertyPath: predictCollideText
+      value: 
+      objectReference: {fileID: 2055544129}
     - target: {fileID: 4684345125994869199, guid: 8a91bad25c4b2e04ca67b6d8b721d60b, type: 3}
       propertyPath: m_Name
       value: Ball
+      objectReference: {fileID: 0}
+    - target: {fileID: 4684345125994869199, guid: 8a91bad25c4b2e04ca67b6d8b721d60b, type: 3}
+      propertyPath: m_Layer
+      value: 1
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 8a91bad25c4b2e04ca67b6d8b721d60b, type: 3}

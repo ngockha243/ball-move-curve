@@ -6,7 +6,7 @@ using TMPro;
 public class gameController : MonoBehaviour
 {
     public static int score = 0;
-    public TextMeshProUGUI tmp;
+    public TextMeshProUGUI scoreText;
     public GameObject[] gameObj;
     public GameObject enemyActive;
     public static bool isEnemyActive = false;
@@ -15,7 +15,7 @@ public class gameController : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        tmp.text = "Score: " + score;
+        scoreText.text = "Score: " + score;
         if(!isEnemyActive){
             
             SpwanEnemy();
